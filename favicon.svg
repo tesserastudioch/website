@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect x="2" y="2" width="13" height="13" rx="2.5" fill="#b5552f"/>
-  <rect x="17" y="2" width="13" height="13" rx="2.5" fill="#1d1d1b"/>
-  <rect x="2" y="17" width="13" height="13" rx="2.5" fill="#1d1d1b"/>
-  <rect x="17" y="17" width="13" height="13" rx="2.5" fill="#d9cfc1"/>
+  <style>
+    .ink { fill: #1d1d1b; } .acc { fill: #b5552f; }
+    @media (prefers-color-scheme: dark) { .ink { fill: #f1eee8; } .acc { fill: #e07a50; } }
+  </style>
+  <rect class="ink" x="1" y="1" width="14" height="14" rx="2.5"/>
+  <rect class="acc" x="17" y="1" width="14" height="14" rx="2.5"/>
+  <rect class="ink" x="1" y="17" width="14" height="14" rx="2.5"/>
+  <rect class="ink" x="17" y="17" width="14" height="14" rx="2.5"/>
 </svg>
