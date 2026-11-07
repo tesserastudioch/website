@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Social previews (Instagram/Pinterest/messengers). Replace photos/og.jpg with a 1200×630 image. -->
+  <!-- Social previews (Instagram/Pinterest/messengers). photos/og.jpg is 1200×630, made by tools/photos/site_export.py. -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tesserastudio.ch/">
   <meta property="og:title" content="Tessera Studio">
@@ -51,21 +51,93 @@
   -->
 
   <section id="work" class="work">
-    <h2>Kinetic sculptures</h2>
-    <p class="section-lead">The first pieces, fresh off the printer. Puzzles are next.</p>
+    <h2>Kinetic sculptures &amp; puzzles</h2>
+    <p class="section-lead">The first pieces, fresh off the printer. Tap a thumbnail to see more.</p>
 
     <!--
-      Gallery: put photos into the photos/ folder (JPEG or WebP, ~2000 px long side, ≤ 500 KB each)
-      and edit the list below. Tiles whose file is missing hide themselves.
-      Short loops: use <video src="photos/x.mp4" autoplay muted loop playsinline> instead of <img> — much lighter than GIF.
+      One <article class="piece"> per fidget. Photos come from tools/photos/site_export.py
+      (photos/<fidget>-NN.jpg, 1080×1350, thumbnails in photos/thumbs/).
+      Each thumbnail links to the full image; the small script at the bottom swaps it into the main frame.
+      Short loops: use <video src="photos/x.mp4" autoplay muted loop playsinline> in the frame instead of <img>.
+
+      Credit line (for pieces remixed from someone else's model), uncomment and fill in:
+      <p class="credit">Remix of <a href="MODEL-URL" rel="noopener">MODEL NAME</a> by AUTHOR · <a href="LICENSE-URL" rel="noopener">LICENSE</a></p>
     -->
     <div class="gallery">
-      <figure><img src="photos/01.jpg" alt="Dragonegg: 3D printed gold and silver scaled egg shown stretched, twisted and closed" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Dragonegg</figcaption></figure>
-      <figure><img src="photos/02.jpg" alt="HexDrop: red hexagonal 3D printed spiral, collapsed in a hand and stretched open" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>HexDrop</figcaption></figure>
-      <figure><img src="photos/03.jpg" alt="Puzzle in a hand for scale" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Scale</figcaption></figure>
-      <figure><img src="photos/04.jpg" alt="Close-up of an interlocking joint" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Detail</figcaption></figure>
-      <figure><img src="photos/05.jpg" alt="Puzzle on a bookshelf" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>On the shelf</figcaption></figure>
-      <figure><img src="photos/06.jpg" alt="Prints in different colours" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Colours</figcaption></figure>
+
+      <article class="piece">
+        <a class="frame" href="photos/dragon-egg-01.jpg"><img src="photos/dragon-egg-01.jpg" alt="Dragonegg: gold and silver 3D printed egg covered in overlapping scales" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/dragon-egg-01.jpg" aria-current="true"><img src="photos/thumbs/dragon-egg-01.jpg" alt="Dragonegg closed" loading="lazy"></a>
+          <a href="photos/dragon-egg-02.jpg"><img src="photos/thumbs/dragon-egg-02.jpg" alt="Dragonegg stretched into a long twisted spiral" loading="lazy"></a>
+          <a href="photos/dragon-egg-03.jpg"><img src="photos/thumbs/dragon-egg-03.jpg" alt="Dragonegg folded flat on its side" loading="lazy"></a>
+          <a href="photos/01.jpg"><img src="photos/01.jpg" alt="Dragonegg shown folded, stretched and closed" loading="lazy"></a>
+        </div>
+        <h3>Dragonegg</h3>
+        <p>A scaled egg that unrolls into a long, twisting spiral — and folds back again.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
+      <article class="piece">
+        <a class="frame" href="photos/hex-keychain-01.jpg"><img src="photos/hex-keychain-01.jpg" alt="HexDrop: red hexagonal 3D printed keychain made of nested hexagon rings" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/hex-keychain-01.jpg" aria-current="true"><img src="photos/thumbs/hex-keychain-01.jpg" alt="HexDrop flat" loading="lazy"></a>
+          <a href="photos/02.jpg"><img src="photos/02.jpg" alt="HexDrop collapsed in a hand and stretched open" loading="lazy"></a>
+        </div>
+        <h3>HexDrop</h3>
+        <p>Nested hexagons on a keyring that drop open into a spiral cone.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
+      <article class="piece">
+        <a class="frame" href="photos/spiral-cone-01.jpg"><img src="photos/spiral-cone-01.jpg" alt="Spiral cone: blue spiral cone threaded through an orange slotted cone" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/spiral-cone-01.jpg" aria-current="true"><img src="photos/thumbs/spiral-cone-01.jpg" alt="Orange and blue cones together" loading="lazy"></a>
+          <a href="photos/spiral-cone-02.jpg"><img src="photos/thumbs/spiral-cone-02.jpg" alt="Orange and blue cones apart" loading="lazy"></a>
+          <a href="photos/spiral-cone-03.jpg"><img src="photos/thumbs/spiral-cone-03.jpg" alt="Red and orange cones together" loading="lazy"></a>
+          <a href="photos/spiral-cone-04.jpg"><img src="photos/thumbs/spiral-cone-04.jpg" alt="Red and orange cones apart" loading="lazy"></a>
+        </div>
+        <h3>Spiral Cone</h3>
+        <p>Two cones, one twist: the spiral screws through the slots until they become one.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
+      <article class="piece">
+        <a class="frame" href="photos/gyro-rings-01.jpg"><img src="photos/gyro-rings-01.jpg" alt="Gyro rings: red nested rings opened into a sphere" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/gyro-rings-01.jpg" aria-current="true"><img src="photos/thumbs/gyro-rings-01.jpg" alt="Red rings opened into a sphere" loading="lazy"></a>
+          <a href="photos/gyro-rings-02.jpg"><img src="photos/thumbs/gyro-rings-02.jpg" alt="Red rings folded flat" loading="lazy"></a>
+          <a href="photos/gyro-rings-03.jpg"><img src="photos/thumbs/gyro-rings-03.jpg" alt="Silver rings opened" loading="lazy"></a>
+          <a href="photos/gyro-rings-04.jpg"><img src="photos/thumbs/gyro-rings-04.jpg" alt="Silver rings folded flat" loading="lazy"></a>
+        </div>
+        <h3>Gyro Rings</h3>
+        <p>Flat as a coaster, then a sphere: nested rings that spin inside each other.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
+      <article class="piece">
+        <a class="frame" href="photos/gear-keychain-01.jpg"><img src="photos/gear-keychain-01.jpg" alt="Gear keychain: blue pocket fidget with gears and sliders" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/gear-keychain-01.jpg" aria-current="true"><img src="photos/thumbs/gear-keychain-01.jpg" alt="Gear keychain front" loading="lazy"></a>
+          <a href="photos/gear-keychain-02.jpg"><img src="photos/thumbs/gear-keychain-02.jpg" alt="Gear keychain back" loading="lazy"></a>
+        </div>
+        <h3>Gear Keychain</h3>
+        <p>A pocket fidget with gears and sliders to click, turn and push.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
+      <article class="piece">
+        <a class="frame" href="photos/three-piece-puzzle-01.jpg"><img src="photos/three-piece-puzzle-01.jpg" alt="Three-piece puzzle: red, orange and grey pieces interlocked in a knot" width="1080" height="1350" loading="lazy"></a>
+        <div class="thumbs">
+          <a href="photos/three-piece-puzzle-01.jpg" aria-current="true"><img src="photos/thumbs/three-piece-puzzle-01.jpg" alt="Puzzle assembled" loading="lazy"></a>
+          <a href="photos/three-piece-puzzle-02.jpg"><img src="photos/thumbs/three-piece-puzzle-02.jpg" alt="Puzzle assembled, other side" loading="lazy"></a>
+          <a href="photos/three-piece-puzzle-03.jpg"><img src="photos/thumbs/three-piece-puzzle-03.jpg" alt="The three numbered pieces apart" loading="lazy"></a>
+        </div>
+        <h3>Three-Piece Puzzle</h3>
+        <p>Three numbered pieces, one interlocking knot. Easy to take apart, harder to put back.</p>
+        <!-- <p class="credit">…</p> -->
+      </article>
+
     </div>
   </section>
 
@@ -97,6 +169,22 @@
   <p>Design objects for ages 14+. Not a toy — contains small parts.</p>
   <p>&copy; 2026 Tessera Studio · Zurich, Switzerland</p>
 </footer>
+
+<script>
+  // Thumbnail click → show that photo in the piece's main frame (without JS the link just opens the image).
+  document.querySelectorAll('.piece').forEach(function (piece) {
+    var frame = piece.querySelector('.frame'), main = frame.querySelector('img');
+    piece.querySelectorAll('.thumbs a').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        main.src = frame.href = a.href;
+        main.alt = a.querySelector('img').alt;
+        piece.querySelectorAll('.thumbs a').forEach(function (t) { t.removeAttribute('aria-current'); });
+        a.setAttribute('aria-current', 'true');
+      });
+    });
+  });
+</script>
 
 </body>
 </html>

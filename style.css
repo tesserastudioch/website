@@ -103,27 +103,38 @@ h2.follow { margin-top: 40px; }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 28px 20px;
   align-items: start;
 }
 
-.gallery figure { margin: 0; }
+.piece h3 { margin: 14px 0 4px; font-size: 1.15rem; }
+.piece p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.piece .credit { margin-top: 8px; font-size: 0.8rem; }
 
-/* Hide the whole section until at least one photo exists */
-.work:not(:has(figure)) { display: none; }
-
-/* Natural aspect ratio: product cards with text must not be cropped */
-.gallery img,
-.gallery video {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  background: var(--line);
+/* Photos are shot on pure white, so the frame stays white in dark mode too.
+   contain: product cards with text (other aspect ratios) must not be cropped */
+.frame {
   display: block;
+  aspect-ratio: 4 / 5;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+.frame img,
+.frame video { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-.gallery figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--muted); }
+.thumbs { display: flex; gap: 8px; margin-top: 8px; }
+.thumbs a {
+  flex: 0 0 56px;
+  aspect-ratio: 4 / 5;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.thumbs a[aria-current] { border-color: var(--accent); }
+.thumbs img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 .links {
   list-style: none;
